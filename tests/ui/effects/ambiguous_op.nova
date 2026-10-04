@@ -1,0 +1,13 @@
+effect store {
+    effect local {
+        fn save(key: String)
+    }
+    effect remote {
+        fn save(key: String)
+    }
+}
+
+fn f() {
+    store.save("k") //~ ERROR E0403
+    store.local.save("k")
+}

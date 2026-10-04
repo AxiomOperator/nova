@@ -1,0 +1,10 @@
+// A handler discharges the effect, so a pure `pub fn` may perform it inside.
+pub fn silent() {
+    handle console with {
+        fn print(text) { }
+        fn eprint(text) { }
+        fn read_line() { None }
+    } {
+        console.print("dropped")
+    }
+}

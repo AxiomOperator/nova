@@ -1,0 +1,28 @@
+// Hello, world — run with `nova examples/hello_world.nova`,
+// test with `nova test examples/hello_world.nova`.
+
+fn greeting(name: String) -> String {
+    "Hello, {name}!"
+}
+
+pub fn main() uses [console] {
+    console.print(greeting("world"))
+}
+
+test "hello world" {
+    assert_eq(greeting("world"), "Hello, world!")
+}
+
+// `main` is effectful, but the test swaps the console for a handler that
+// records output, so it runs deterministically with no real I/O.
+test "main prints hello world" {
+    var out = ""
+    handle console with {
+        fn print(text) { out = out + text + "\n" }
+        fn eprint(text) { }
+        fn read_line() { None }
+    } {
+        main()
+    }
+    assert_eq(out, "Hello, world!\n")
+}

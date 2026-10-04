@@ -1,0 +1,13 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2024"
+
+[workspace.dependencies]
+nova_diag = { path = "crates/nova_diag" }
+nova_syntax = { path = "crates/nova_syntax" }
+nova_types = { path = "crates/nova_types" }
+nova_interp = { path = "crates/nova_interp" }

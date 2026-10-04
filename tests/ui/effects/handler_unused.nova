@@ -1,0 +1,9 @@
+pub fn f() -> Int {
+    handle console with { //~ WARN W0403
+        fn print(text) { }
+        fn eprint(text) { }
+        fn read_line() { None }
+    } {
+        1 + 1
+    }
+}

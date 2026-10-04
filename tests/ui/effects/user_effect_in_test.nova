@@ -1,0 +1,7 @@
+effect kv {
+    fn get(key: String) -> String?
+}
+
+test "needs a handler" {
+    kv.get("a") //~ ERROR E0408
+}

@@ -1,0 +1,3 @@
+fn f() {
+    let p = console.print //~ ERROR E0417
+}

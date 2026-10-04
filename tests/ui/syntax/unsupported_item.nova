@@ -1,0 +1,6 @@
+type User { //~ ERROR E0009
+    id: Int
+}
+
+fn ok() {
+}

@@ -1,0 +1,4 @@
+fn f() {
+    missing() //~ ERROR E0101
+    let x = y //~ ERROR E0101
+}

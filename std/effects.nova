@@ -1,0 +1,15 @@
+// Built-in effects (docs/spec/effects.md §9.1).
+//
+// Only effects that have a runtime root handler in this build are declared
+// here. The rest of the §9.1 set (fs, network, process, time, random) arrives
+// with nova_runtime in Phase 3; `ai` and `approval` with Phases 3–4.
+
+/// Terminal input and output.
+pub effect console {
+    /// Writes a line to standard output.
+    fn print(text: String)
+    /// Writes a line to standard error.
+    fn eprint(text: String)
+    /// Reads one line from standard input; `None` at end of input.
+    fn read_line() -> String?
+}

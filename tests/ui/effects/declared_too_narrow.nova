@@ -1,0 +1,8 @@
+effect audit {
+    fn record(event: String)
+}
+
+fn log(event: String) uses [console] {
+    console.print(event)
+    audit.record(event) //~ ERROR E0402
+}

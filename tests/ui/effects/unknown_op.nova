@@ -1,0 +1,3 @@
+pub fn main() uses [console] {
+    console.shout("hi") //~ ERROR E0404
+}

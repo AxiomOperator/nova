@@ -1,0 +1,11 @@
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn f() {
+    add(1) //~ ERROR E0102
+    add(1, 2, 3) //~ ERROR E0102
+    add(a: 1, c: 2) //~ ERROR E0103
+    //~^ ERROR E0102
+    add(b: 2, a: 1)
+}

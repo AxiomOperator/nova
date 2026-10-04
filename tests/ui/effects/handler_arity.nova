@@ -1,0 +1,9 @@
+pub fn f() {
+    handle console with {
+        fn print(text, extra) { } //~ ERROR E0407
+        fn eprint(text) { }
+        fn read_line() { None }
+    } {
+        console.print("x")
+    }
+}
