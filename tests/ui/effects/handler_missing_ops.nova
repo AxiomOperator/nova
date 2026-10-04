@@ -1,0 +1,7 @@
+pub fn f() {
+    handle console with { //~ ERROR E0406
+        fn print(text) { }
+    } {
+        console.print("x")
+    }
+}

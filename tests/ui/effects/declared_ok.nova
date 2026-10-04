@@ -1,0 +1,7 @@
+fn helper() {
+    console.print("hi")
+}
+
+pub fn main() uses [console] {
+    helper()
+}

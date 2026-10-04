@@ -1,0 +1,6 @@
+effect bad { //~ ERROR E0405
+    fn op()
+    effect inner {
+        fn x()
+    }
+}

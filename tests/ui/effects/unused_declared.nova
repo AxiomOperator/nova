@@ -1,0 +1,2 @@
+pub fn quiet() uses [console] { //~ WARN W0401
+}

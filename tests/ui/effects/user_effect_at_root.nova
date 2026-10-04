@@ -1,0 +1,7 @@
+effect kv {
+    fn get(key: String) -> String?
+}
+
+pub fn main() uses [kv] { //~ ERROR E0408
+    kv.get("a")
+}

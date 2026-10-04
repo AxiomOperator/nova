@@ -1,0 +1,10 @@
+pub fn f() {
+    handle console with {
+        fn print(text) { }
+        fn eprint(text) { }
+        fn read_line() { None }
+        fn shout(text) { } //~ ERROR E0404
+    } {
+        console.print("x")
+    }
+}

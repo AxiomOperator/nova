@@ -1,0 +1,4 @@
+fn f() {
+    let x = 1
+    x = 2 //~ ERROR E0104
+}

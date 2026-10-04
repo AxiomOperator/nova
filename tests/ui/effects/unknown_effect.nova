@@ -1,0 +1,2 @@
+pub fn main() uses [network] { //~ ERROR E0401
+}

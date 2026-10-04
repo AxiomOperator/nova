@@ -1,0 +1,27 @@
+// Delegation: an inner handler decorates output and forwards it to the
+// outer (root) console handler. `abort` ends a `handle` with a value.
+
+fn shout(msg: String) uses [console] {
+    console.print(msg + "!")
+}
+
+pub fn main() uses [console] {
+    handle console with {
+        fn print(text) { console.print("[log] " + text) }
+        fn eprint(text) { console.eprint(text) }
+        fn read_line() { console.read_line() }
+    } {
+        shout("hello")
+    }
+
+    let result = handle console with {
+        fn print(text) { abort "aborted at: " + text }
+        fn eprint(text) { }
+        fn read_line() { None }
+    } {
+        console.print("first")
+        console.print("never printed")
+        "not reached"
+    }
+    console.print(result)
+}

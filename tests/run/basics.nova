@@ -1,0 +1,19 @@
+fn fib(n: Int) -> Int {
+    if n < 2 {
+        return n
+    }
+    fib(n - 1) + fib(n - 2)
+}
+
+fn describe(n: Int) -> String {
+    if n % 2 == 0 { "even" } else { "odd" }
+}
+
+pub fn main() uses [console] {
+    var i = 0
+    var total = 0
+    total += fib(10)
+    console.print("fib(10) = {total}")
+    console.print("10 is {describe(10)}, 7 is {describe(7)}")
+    console.print("{1.5 * 2.0} {[1, 2, 3]} {Some("x")} {None} {true && !false}")
+}

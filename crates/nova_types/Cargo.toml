@@ -1,0 +1,8 @@
+[package]
+name = "nova_types"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+nova_diag.workspace = true
+nova_syntax.workspace = true
